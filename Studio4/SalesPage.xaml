@@ -1,0 +1,222 @@
+﻿<Page x:Class="Studio4.SalesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Studio4"
+      mc:Ignorable="d" 
+      Height="600" Width="805"
+      Title="Page1">
+
+
+    <Page.Resources>
+        <DataTemplate x:Key="listboxTemplate">
+            <Grid x:Name="GridItem">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="430"/>
+                    <ColumnDefinition Width="130"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Text="{Binding Path=Num}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="20" FontWeight="Medium"></TextBlock>
+                <TextBlock Grid.Column="1" Text="{Binding Path=Name}" FontSize="20" FontWeight="Medium" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" TextTrimming="WordEllipsis"/>
+                <TextBlock Grid.Column="2" Text="{Binding Path=Date}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Medium" Foreground="White"/>
+                <Image Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="35" Height="35" Source="Images/pdf.png"/>
+
+
+
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid x:Name="MainGrid">
+        <Grid.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="#FF4776E6" Offset="0"/>
+                <GradientStop Color="#FF8E54E9" Offset="0.75"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="520"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- NAVBAR-->
+        <Grid Width="810" Height="80">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#FF4776E6" Offset="0"/>
+                    <GradientStop Color="#FF8E54E9" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+
+
+
+            <Grid Grid.Column="0" Grid.ColumnSpan="2" Margin="80,0,266,0">
+                <Button Content="Sales"
+                        Cursor="Hand"
+                        Background="Transparent"
+                        Foreground="White"
+                        FontSize="22"
+                        FontWeight="Medium" FontFamily="Roboto Medium" Style="{DynamicResource ButtonStyles_App}"
+                        />
+            </Grid>
+
+            <Grid Grid.Column="1" Margin="25,0,25,0">
+                <Button Content="Gallery"
+                        Cursor="Hand"
+                        Background="Transparent"
+                        Foreground="White"
+                        FontSize="22"
+                        FontWeight="Medium" FontFamily="Roboto Medium" Style="{DynamicResource ButtonStyles_App}" Margin="10,0,10,0" Click="toGallery"
+                        />
+            </Grid>
+
+            <Grid Grid.Column="1" Grid.ColumnSpan="2" Margin="266,0,100,0">
+                <Button Content="Upload"
+                        Cursor="Hand"
+                        Background="Transparent"
+                        Foreground="White"
+                        FontSize="22"
+                        FontWeight="Medium" FontFamily="Roboto Medium" Style="{DynamicResource ButtonStyles_App}" Click="toUpload"
+                        />
+            </Grid>
+
+        </Grid>
+        <!-- NAVBAR END-->
+
+        <Button Margin="756,10,10,30" Cursor="Hand" Background="#00DDDDDD" BorderBrush="#00DDDDDD" Click="toSettingsPage" Style="{DynamicResource NoButtonBG}">
+            <StackPanel>
+                <Image Source="./Images/gearicon.png" Width="26" Height="26"/>
+            </StackPanel>
+        </Button>
+
+
+        <Grid Grid.Row="1" Margin="0,3,0,0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <StackPanel
+                        Margin="0,40,0,0" Grid.Row="1">
+                <ListBox x:Name="invoiceBox" Height="147"
+                         Width="808"
+                         Background="#9299D3" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                         ItemTemplate="{StaticResource listboxTemplate}"/>
+                <StackPanel Orientation="Horizontal"/>
+            </StackPanel>
+
+
+
+
+            <StackPanel x:Name="Graph_Panel" Grid.Row="0"
+                        Background="#FF92D3CD" Margin="0,0,0,10">
+                <Image x:Name="GraphPic" Width="534" Height="247"
+                       Source="{Binding DisplayImage}"
+                       />
+            </StackPanel>
+            <Label Content="Download Invoice Template&#xD;&#xA;" HorizontalAlignment="Left" Margin="10,258,0,0" VerticalAlignment="Top" Height="30" Foreground="White" Grid.RowSpan="2"/>
+
+            <Label Content="Delete Selected Invoice&#xA;" HorizontalAlignment="Left" Margin="632,258,0,0" VerticalAlignment="Top" Height="30" Foreground="White" Grid.RowSpan="2"/>
+
+
+        </Grid>
+
+        <TextBlock Text="Invoices"
+                           FontSize="26"
+                           HorizontalAlignment="Center"
+                           FontWeight="Bold"
+                           FontFamily="Fonts/Roboto/"
+                           Foreground="White" Margin="0,262,0,225" Grid.Row="1">
+        </TextBlock>
+
+
+        <Button x:Name="tooltip" Margin="463,263,314,229"  Background="#00DDDDDD" BorderBrush="#00DDDDDD" Grid.Row="1" Style="{DynamicResource ButtonStyles_App}">
+
+            <Image x:Name ="tooltips" Source="./images/information.png" Height="26" Width="20" ToolTipService.ShowDuration="50000">
+                <Image.ToolTip>
+                    <ToolTip x:Name="tooltip1">
+                        <TextBlock x:Name="tooltiptext">
+                            Click 'upload invoice' to upload a pdf of your invoice to the list.
+                            <LineBreak/>
+                            Your invoice will show up on the list after you finish the upload.
+                            <LineBreak/>
+                            Select an invoice from the list and click 'delete selected' to remove
+                            <LineBreak/>
+                             Select an invoice from the list and click 'download selected' to download
+                        </TextBlock>
+                    </ToolTip>
+                </Image.ToolTip>
+            </Image>
+
+        </Button>
+
+        <Button Content="Download Selected"
+                HorizontalAlignment="Left" Width="200"
+                Margin="169,464,0,0" Grid.Row="1" FontSize="20" FontWeight="Medium" Foreground="White" FontFamily="Roboto-Medium"
+                VerticalAlignment="Top" Style="{DynamicResource ButtonStyles_App}" Background="#FF9299D3" Click="downloadInvoices"
+                Cursor="Hand" Height="40"/>
+        <Button Content="Upload Invoice"
+                        Width="201" Height="40"
+                        FontSize="20"
+                        HorizontalAlignment="Left"
+                        Foreground="White"
+                        FontFamily="Roboto Medium"
+                        FontWeight="Medium" BorderBrush="Transparent" Style="{DynamicResource ButtonStyles_App}" Background="#FF9299D3" Click="addInvoice"
+                        Cursor="Hand" Margin="436,464,0,16" Grid.Row="1" RenderTransformOrigin="0.493,0.55">
+
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+
+
+        </Button>
+
+
+
+        <Button
+                        Width="32" Height="25"
+                        FontSize="14"
+                        HorizontalAlignment="Left"
+                        Foreground="White"
+                        FontFamily="Roboto Medium"
+                        FontWeight="Medium" BorderBrush="Transparent" Margin="169,262,0,233"
+                        Background="#00000000" Style="{DynamicResource NoButtonBG}"
+                        Cursor="Hand" Click="template_btn" Grid.Row="1">
+
+            <Image Source="/Images/download.png"/>
+        </Button>
+
+        <Button Width="32" Height="25"
+                        FontSize="14"
+                        HorizontalAlignment="Left"
+                        Foreground="White"
+                        FontFamily="Roboto Medium"
+                        FontWeight="Medium" BorderBrush="Transparent" Margin="763,262,0,233"
+                        Background="#00000000" Style="{DynamicResource NoButtonBG}"
+                        Cursor="Hand" Click="deleteInvoice" Grid.Row="1">
+
+            <Image Source="/Images/redx.png" Height="25" Width="24"/>
+
+        </Button>
+
+
+
+
+    </Grid>
+</Page>
+

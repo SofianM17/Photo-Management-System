@@ -1,0 +1,192 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <StartupObject></StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\Accounts.png" /> 
+    <None Remove="Images\book.png" />
+    <None Remove="Images\camera.png" />
+    <None Remove="Images\checkmark.png" />
+    <None Remove="Images\download.png" />
+    <None Remove="Images\Exit.png" />
+    <None Remove="Images\folder.png" />
+    <None Remove="Images\gallery.png" />
+    <None Remove="Images\gearicon.png" />
+    <None Remove="Images\grapg.png" />
+    <None Remove="Images\graph-bar %281%29.png" />
+    <None Remove="Images\Graph0.png" />
+    <None Remove="Images\Graph1.png" />
+    <None Remove="Images\Graph10.png" />
+    <None Remove="Images\Graph2.png" />
+    <None Remove="Images\Graph3.png" />
+    <None Remove="Images\Graph4.png" />
+    <None Remove="Images\Graph5.png" />
+    <None Remove="Images\Graph6.png" />
+    <None Remove="Images\Graph7.png" />
+    <None Remove="Images\Graph8.png" />
+    <None Remove="Images\Graph9.png" />
+    <None Remove="Images\information.png" />
+    <None Remove="Images\pdf.png" />
+    <None Remove="Images\photoshoot4.png" />
+    <None Remove="Images\pluto-57.png" />
+    <None Remove="Images\recycle.png" />
+    <None Remove="Images\redx.png" />
+    <None Remove="Images\stockpic.jpg" />
+    <None Remove="Images\stockpic2.jpg" />
+    <None Remove="Images\stockpic3.jpg" />
+    <None Remove="Images\stockpic4.jpg" />
+    <None Remove="Images\Wave.png" />
+    <None Remove="Resources\album-icon.png" />
+    <None Remove="Resources\gearicon.png" />
+    <None Remove="Resources\information-circle-outline.png" />
+    <None Remove="Resources\information.png" />
+    <None Remove="Resources\photo-album.png" />
+    <None Remove="Resources\sampleimage1.jpg" />
+    <None Remove="Resources\sampleimage2.jpg" />
+    <None Remove="Resources\sampleimage3.jpg" />
+    <None Remove="Resources\sampleimage4.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <COMReference Include="InteropExtensionLib">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>1</VersionMajor>
+      <Guid>c3d19104-7a67-4eb0-b459-d5b2e734d430</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VSTOEE100">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>10</VersionMajor>
+      <Guid>aab9c2aa-6036-4ae1-a41c-a40ab7f39520</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="ACTIVEXLib">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>1</VersionMajor>
+      <Guid>012f24c1-35b0-11d0-bf2d-0000e8d0d146</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Access.Dao">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>12</VersionMajor>
+      <Guid>4ac9e1da-5bad-4ac7-86e3-24f4cdceca28</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Core">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>8</VersionMinor>
+      <VersionMajor>2</VersionMajor>
+      <Guid>2df8d04c-5bfa-101b-bde5-00aa0044de52</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>7</VersionMinor>
+      <VersionMajor>8</VersionMajor>
+      <Guid>00020905-0000-0000-c000-000000000046</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Vbe.Interop.Forms">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>2</VersionMajor>
+      <Guid>0d452ee1-e08f-101a-852e-02608c4d0bb4</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Vbe.Interop.Forms">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>2</VersionMajor>
+      <Guid>ac2de821-36a2-11cf-8053-00aa006009fa</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Accounts.png" />
+    <Resource Include="Images\book.png" />
+    <Resource Include="Images\camera.png" />
+    <Resource Include="Images\checkmark.png" />
+    <Resource Include="Images\download.png" />
+    <Resource Include="Images\Exit.png" />
+    <Resource Include="Images\folder.png" />
+    <Resource Include="Images\gallery.png" />
+    <Resource Include="Images\gearicon.png" />
+    <Resource Include="Images\grapg.png" />
+    <Resource Include="Images\graph-bar (1).png" />
+    <Resource Include="Images\Graph0.png" />
+    <Resource Include="Images\Graph1.png" />
+    <Resource Include="Images\Graph10.png" />
+    <Resource Include="Images\Graph2.png" />
+    <Resource Include="Images\Graph3.png" />
+    <Resource Include="Images\Graph4.png" />
+    <Resource Include="Images\Graph5.png" />
+    <Resource Include="Images\Graph6.png" />
+    <Resource Include="Images\Graph7.png" />
+    <Resource Include="Images\Graph8.png" />
+    <Resource Include="Images\Graph9.png" />
+    <Resource Include="Images\information.png" />
+    <Resource Include="Images\pdf.png" />
+    <Resource Include="Images\photoshoot4.png" />
+    <Resource Include="Images\pluto-57.png" />
+    <Resource Include="Images\recycle.png" />
+    <Resource Include="Images\redx.png" />
+    <Resource Include="Images\stockpic.jpg" />
+    <Resource Include="Images\stockpic2.jpg" />
+    <Resource Include="Images\stockpic3.jpg" />
+    <Resource Include="Images\stockpic4.jpg" />
+    <Resource Include="Images\Wave.png" />
+    <Resource Include="Resources\album-icon.png" />
+    <Resource Include="Resources\gearicon.png" />
+    <Resource Include="Resources\information-circle-outline.png" />
+    <Resource Include="Resources\information.png" />
+    <Resource Include="Resources\photo-album.png" />
+    <Resource Include="Resources\sampleimage1.jpg" />
+    <Resource Include="Resources\sampleimage2.jpg" />
+    <Resource Include="Resources\sampleimage3.jpg" />
+    <Resource Include="Resources\sampleimage4.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
