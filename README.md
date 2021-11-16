@@ -1,7 +1,7 @@
 # Photo Management System
 
 ## What Is It?
-This Photo Management System was developed collaboratively in a team of 4 using WPF with a focus on GUI design and requirement elicitation from end users - photographers in this case. This application allows the user to:
+This Photo Management System was developed collaboratively by a team of 4 using WPF with a focus on GUI design and requirement elicitation from end users - photographers in this case. This application allows the user to:
 - Register
 - Upload and delete uploaded photos 
 - Name, describe, and price photos
