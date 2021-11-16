@@ -5,8 +5,9 @@ This Photo Management System was developed collaboratively by a team of 4 using 
 - Register
 - Upload and delete uploaded photos 
 - Name, describe, and price photos
-- Create albums from uploaded photos, and delete them
+- Create custom albums from uploaded photos and delete them
 - Upload and download pdf files for invoice management
+- Sort photos in the gallery using various sorting options
 
 This is a conceptual app for demonstrating user-focused interface design that uses local storage.
 
