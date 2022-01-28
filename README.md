@@ -14,3 +14,18 @@ This is a conceptual app for demonstrating user-focused interface design that us
 ## How to Run
 To run the GUI application, execute \Studio4\bin\Debug\netcoreapp3.1\studio4.exe
 
+## Demo
+
+### Registration
+![Registration](https://i.gyazo.com/f07ace0e0377c9ba1350270409cba33e.gif)
+
+### Upload Photos
+![Upload Photos](https://i.gyazo.com/56cc41064465eb97ce6973fde2807933.gif)
+
+### Edit Photo Information
+![Edit Photo Information](https://i.gyazo.com/51d08b7f40e2a3f5e0c342ea401b674e.gif)
+
+### Create and Manage Albums
+![Album Creation and Management](https://i.gyazo.com/1fea9bb6c0eacccb84b2ba2be70c7a94.gif)
+
+
